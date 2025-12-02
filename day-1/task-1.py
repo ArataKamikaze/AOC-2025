@@ -7,8 +7,6 @@ try:
     with open('input.txt', 'r') as input:
         for line in input.readlines():
             i+=1
-            if(i > 100):
-                sys.exit();
             old_dial = dial
             # grabs the values
             dir = line[0]
@@ -16,8 +14,7 @@ try:
             
             #check for values over 99
             if(value > 99):
-                div = value // 100
-                value = value - (div * 100)
+                value = value % 100
             
             if dir == 'L':
                 dial -= value
